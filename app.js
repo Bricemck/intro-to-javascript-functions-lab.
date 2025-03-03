@@ -14,9 +14,11 @@ const game = {
     items: [
       { name: "potion", quantity: 4 },
       { name: "pokeball", quantity: 8 },
-      { name: "rare candy", quantity: 99 },
-    ],
-  }
+      { name: "rare candy", quantity: 99 },]
+
+
+}
+
   // console.dir(pokemon, { maxArrayLength: null })
 
   //Exercise 1//
@@ -46,5 +48,26 @@ game.gyms.forEach(gym => {
 // console.log(game);
 
 //Exercise 7//
-game.party.splice(0, pokemon +1,)
+game.party.splice(0, 1, pokemon[4])
 console.log(game) 
+
+//Exercise 8//
+game.party.forEach(banana => {console.log(banana.name) });
+
+  // for (let i = 0; i < game.party.length; i++) 
+
+  //Exercise 9//
+  function printStarters(pokemon) {
+  
+  for  (let i =0; i < pokemon.length; i++)  {
+  if (pokemon[i].starter === true) {console.log(pokemon[i]); }
+  }
+} printStarters(pokemon);
+
+//Exercise 10//
+game.catchPokemon = function (pokemonObj) {
+  this.party.push(pokemonObj);
+};
+
+game.catchPokemon(pokemon[144]);
+console.log(game.party);
